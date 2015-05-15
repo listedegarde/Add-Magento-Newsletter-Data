@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @category Custom
+ * @package Custom_Newsletter
+ * @author Jonathan <https://github.com/listedegarde/>
+ * @copyright Jonathan Frazer <https://github.com/listedegarde/Add-Magento-Newsletter-Data>
+ * @license http://www.gnu.org/licenses/gpl-2.0.html  GNU GENERAL PUBLIC LICENSE (Version 2)
+ */
+-->
+<config>
+  <modules>
+    <Custom_Newsletter>
+      <version>1.0.0.0</version>
+    </Custom_Newsletter>
+  </modules>
+ <global>
+    <models>
+      <newsletters>
+        <class>Custom_Newsletter_Model</class>
+      </newsletters>
+    </models>
+    <events>
+      <newsletter_subscriber_save_before>
+        <observers>
+          <newsletters_add_types>
+            <class>newsletters/observer</class>
+            <method>newsletterSubscriberSave</method>
+          </newsletters_add_types>
+        </observers>
+      </newsletter_subscriber_save_before>
+    </events>
+  </global>
+</config>
